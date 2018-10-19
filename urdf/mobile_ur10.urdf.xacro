@@ -11,7 +11,7 @@
   <link name="ur10_platform">
     <visual>
       <geometry>
-        <mesh filename="package://mobile_ur_description/meshes/ur_adapter.stl"/>
+        <mesh filename="package://mobile_ur_description/meshes/new_ur_adapter.stl"/>
       </geometry>
       <material name="LightGrey">
         <color rgba="0.7 0.7 0.7 1.0"/>
@@ -19,7 +19,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://mobile_ur_description/meshes/ur_adapter.stl"/>
+        <mesh filename="package://mobile_ur_description/meshes/new_ur_adapter.stl"/>
       </geometry>
     </collision>
   </link>
@@ -27,17 +27,17 @@
   <joint name="platform_base_joint" type="fixed">
     <parent link="base"/>
     <child link="ur10_platform"/>
-    <origin xyz="0 0 0.22" rpy = "0 0 ${pi * 0.5}"/>
+    <origin xyz="0 0 -0.065" rpy = "0 0 ${pi / 2.0}"/>
   </joint>
   
   <joint name="ur10_base_joint" type="fixed">
     <parent link="ur10_platform"/>
     <child link="ur10_base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 ${pi * 3.0 / 4.0 }"/>
+    <origin xyz="0.1 0 0.33274" rpy="0 0 ${pi}"/>
   </joint>
   
   <sensor_d435 parent="ur10_platform">
-    <origin xyz="0 -0.29 -0.26" rpy="0 ${pi / 16.0} ${pi / -2.0}"/>
+    <origin xyz="0 -0.24 0.02" rpy="0 ${pi / 15.0} ${pi / -2.0}"/>
   </sensor_d435>
 
   <link name="pico_flexx_optical_frame">
