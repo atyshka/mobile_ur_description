@@ -37,7 +37,7 @@
   </joint>
   
   <sensor_d435 parent="ur10_platform">
-    <origin xyz="0.020 -0.28 0.07" rpy="0 ${pi / 9.75} ${pi / -2.0}"/>
+    <origin xyz="0 -0.26 0.07" rpy="0 ${pi / 9.75} ${pi / -2.0}"/>
   </sensor_d435>
 
   <link name="pico_flexx_link">
