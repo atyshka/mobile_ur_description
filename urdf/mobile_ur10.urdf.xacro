@@ -33,26 +33,30 @@
   <joint name="ur10_base_joint" type="fixed">
     <parent link="ur10_platform"/>
     <child link="ur10_base_link"/>
-    <origin xyz="0.1 0 0.33274" rpy="0 0 ${pi}"/>
+    <origin xyz="0.1 0 0.33274" rpy="0 0 ${pi/2}"/>
   </joint>
   
   <sensor_d435 parent="ur10_platform">
-    <origin xyz="0 -0.24 0.02" rpy="0 ${pi / 15.0} ${pi / -2.0}"/>
+    <origin xyz="0.020 -0.28 0.07" rpy="0 ${pi / 9.75} ${pi / -2.0}"/>
   </sensor_d435>
 
+  <link name="pico_flexx_link">
+  </link>
+  
   <link name="pico_flexx_optical_frame">
   </link>
 
   <joint name="pico_flexx_joint" type="fixed">
     <parent link="robotiq_arg2f_base_link"/>
-    <child link="pico_flexx_optical_frame"/>
+    <child link="pico_flexx_link"/>
+    <origin xyz="-0.0561407 0 0.0686689" rpy="0 0 ${pi}"/>
     <!-- <origin xyz="-0.0532277 -0.0189994 0.0727731" rpy="0.0316799 -0.0245556 -3.13378"/> -->
     <!-- <origin xyz="-0.0561407 -0.00324187 0.0686689" rpy="0.0513396 -0.00615057 3.11232"/> -->
-    <origin xyz="-0.0561407 -0.00324187 0.0686689" rpy="0.0313396 -0.00615057 3.11232"/> -->
-    <!-- <origin xyz="-0.056339 0 0.063644" rpy="0.0072618 -0.0401206 3.08"/> -->
-    <!-- <origin xyz="-0.056 0 0.0687" rpy="0.0313 -0.006 -3.11"/> -->
-    <!-- <origin xyz="-0.0316339 -0.0000561994 0.063644" rpy="0.000172618 -0.0101206 -3.12999"/> -->
-    <!-- <origin xyz="-0.0441847 -0.0001654 0.0760968" rpy="0.0144508 0.00604831 -3.08424"/> -->
-    <!-- <origin xyz="-0.07 0 0.07" rpy="0 0 3.14"/> -->
+  </joint>
+
+  <joint name="pico_flexx_calibration_joint" type="fixed">
+    <parent link="pico_flexx_link"/>
+    <child link="pico_flexx_optical_frame"/>
+    <origin xyz="0 0 0" rpy="-0.04 0 -0.025"/>
   </joint>
 </robot>
